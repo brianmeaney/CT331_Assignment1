@@ -20,6 +20,9 @@ void runTests(){
   deleteAfter(l);
   traverse(l);
   printf("\n");
+  
+  // Test length
+  printf("Length: %d", length(l));
 
   printf("\nTests complete.\n");
 }
