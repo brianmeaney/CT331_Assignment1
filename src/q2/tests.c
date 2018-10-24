@@ -3,26 +3,33 @@
 #include "linkedList.h"
 
 void runTests(){
+	//testing stack - push and pop
   printf("Tests running...\n");
-  listElement* l = createEl("Test String (1).", 30);
-  //printf("%s\n%p\n", l->data, l->next);
-  //Test create and traverse
-  traverse(l);
-  printf("\n");
-
-  //Test insert after
-  listElement* l2 = insertAfter(l, "another string (2)", 30);
-  insertAfter(l2, "a final string (3)", 30);
-  traverse(l);
-  printf("\n");
-
-  // Test delete after
-  deleteAfter(l);
-  traverse(l);
-  printf("\n");
+  printf("TESTING STACK\n");
+  listElement* k = NULL;   //create blank element
+  push(&k, "HEY", 30);  //push values
+  push(&k, "YOU", 30);
+  push(&k, "THERE", 30);
+  traverse(k);
+  printf("Length: %d", length(k));
+  printf("TESTING POP\n");
+  *pop(&k); 
+  traverse(k);
+  printf("Length: %d", length(k));
   
-  // Test length
-  printf("Length: %d", length(l));
+  
+  //tetsting queue - enqueue and dequeue
+  printf("\n\nTESTING QUEUE\n");
+  listElement* q = NULL;
+  enqueue(&q, "FIRST", 30);
+  enqueue(&q, "SECOND", 30);
+  enqueue(&q, "THIRD", 30);
+  traverse(q);
+  printf("Length: %d", length(q));
+  printf("\nTESTING DEQUEUE\n");
+  dequeue(q);
+  traverse(q);
+  printf("Length: %d", length(q));
 
   printf("\nTests complete.\n");
 }

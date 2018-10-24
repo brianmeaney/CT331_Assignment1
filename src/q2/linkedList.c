@@ -78,11 +78,10 @@ void push(listElement** list, char* data, size_t size){
 	*list = element;  //inserts new element as *list
 }	
 
-listElement* pop(listElement** list);{
+listElement* pop(listElement** list){
 	listElement *head = *list;
 	if(head) {
-		*listElement = head->next;
-	
+		*list = head->next;
 	}
 	return head;
 }
